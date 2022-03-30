@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Project | Home</title>
+  @@include('links/_head.html')
+</head>
+
+<body>
+  <div class="main-wrapper js-fadeIn">
+    @@include('components/_header.html')
+    <main class="main">
+      <section class="section modal" id="modal-1">
+        <div class="container">
+          <div class="modal-row">
+            <div class="modal-form">
+              <div class="modal__title">
+                <h1 class="title-1">Standard mix</h1>
+                <p>Don’t let anyone track your bitcoins. </p>
+                <p>Use verified solutions for standard or clean mixing.</p>
+              </div>
+              <form>
+                <div class="form-box">
+                  <input type="text" placeholder="Keep your wallet:" class="form-input">
+                </div>
+                <button class="btn btn_blue" type="submit">Mix</button>
+              </form>
+            </div>
+            <div class="modal__steps">
+              <div class="modal-step__row">
+                <div class="modal-step__item">
+                  <div class="modal-step__img circle">
+                    <svg class="circle-icon">
+                      <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallet">
+                      </use>
+                    </svg>
+                  </div>
+                  <div class="modal-step__content">
+                    <h5 class="title-5">Wallets addresses</h5>
+                    <p>Add from one to three addresses that will finally receive clean bitcoins</p>
+                  </div>
+                  <a href="#">
+                    <svg class="arrow-icon">
+                      <use xlink:href="./img/svg/sprite-svg/sprite.svg#right">
+                      </use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="modal-step__item inactive">
+                  <div class="modal-step__img circle">
+                    <svg class="circle-icon">
+                      <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallets">
+                      </use>
+                    </svg>
+                  </div>
+                  <div class="modal-step__content">
+                    <h5 class="title-5">Transfer funds</h5>
+                    <p>Deposit money to the official service wallet. Each wallet is active for 7 days only</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('components/_footer.html')
+  </div>
+  @@include('links/_scripts.html')
+</body>
+
+</html>

@@ -75,20 +75,22 @@ gulp.task("js", function () {
     .src([
       // js libs uncomment what you need
       "node_modules/jquery/dist/jquery.min.js",
-      // "node_modules/slick-carousel/slick/slick.min.js",
+      "node_modules/slick-carousel/slick/slick.min.js",
       // "node_modules/svg4everybody/dist/svg4everybody.min.js",
+      "node_modules/chart.js/dist/chart.min.js",
+
       // "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
       // "node_modules/odometer/odometer.min.js",
       // "node_modules/@popperjs/core/dist/umd/popper.min.js",
 
 
-      // "node_modules/jquery-nice-select/js/jquery.nice-select.min.js",
+      // "src/libs/nice-select/js/jquery.nice-select.min.js",
       // "src/libs/datepicker/dist/js/datepicker-full.min.js",
       // "src/libs/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js",
       // "src/libs/popper/popper.min.js",
 
       // "src/libs/bootstrap-4.6.0/dist/js/bootstrap.min.js",
-
+      // "src/js/graph.js",
       "src/js/script.js",
     ])
     .pipe(sourcemaps.init())

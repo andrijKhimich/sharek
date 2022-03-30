@@ -1,35 +1,62 @@
 @font-face {
-  font-family: 'Montserrat';
-  src:
-    // url('../fonts/montserrat/Montserrat-Medium.woff') format('woff'),
-    url('../fonts/montserrat/Montserrat-Medium.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'Neue Machina';
+  src: url('../fonts/NeueMachina/NeueMachina-Bold.woff2') format('woff2');
+  font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src:
-    // url('../fonts/montserrat/Montserrat-SemiBold.woff') format('woff'),
-    url('../fonts/montserrat/Montserrat-SemiBold.woff2') format('woff2');
+  font-family: 'Circular Std';
+  src: url('../fonts/CircularStd/CircularStd-Book.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('../fonts/Urbanist/Urbanist-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src:
-    // url('../fonts/montserrat/Montserrat-Regular.woff') format('woff'),
-    url('../fonts/montserrat/Montserrat-Regular.woff2') format('woff2');
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT/FuturaPT-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT/FuturaPT-Book.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src:
-    url('../fonts/playFairDisplay/PlayfairDisplay-Black.woff2') format('woff2');
-  // url('../fonts/playFairDisplay/PlayfairDisplay-Black.woff') format('woff');
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT/FuturaPT-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT/FuturaPT-Demi.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+  // @font-face {
+  //   font-family: 'Futura PT';
+  //   src: url('../fonts/FuturaPT/FuturaPT-Bold.woff2') format('woff2');
+  //   font-weight: 700;
+  //   font-style: normal;
+  // }
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT/FuturaPT-Heavy.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
 }

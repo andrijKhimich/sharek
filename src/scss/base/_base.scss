@@ -11,9 +11,11 @@ html {
 
 body {
   margin: 0; // Remove the margin in all browsers.
-  font-size: 16px;
-  // font-family: $font-secondary;
-  // color: $white;
+  font-size: 18px;
+  background-color: $bgColor;
+  color: $white;
+  font-family: 'Futura PT';
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -53,54 +55,56 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-weight: normal;
-  // font-family: $font-primary;
+  font-family: 'Neue Machina';
 }
 
 h1 {
-  text-transform: uppercase;
-  font-size: 100px;
-  line-height: .8em;
-  letter-spacing: 1px;
-  // color: $gray;
+  font-size: 80px;
+  line-height: 1.06em;
+  margin-bottom: 45px;
 
-  @include d(1299) {
-    font-size: 90px;
-  }
-
-  @include d(1199) {
-    font-size: 80px;
-  }
-
-  @include d(768) {
-    font-size: 70px;
-  }
-
-  @include d(575) {
+  @include d(992) {
     font-size: 60px;
   }
 
-  @include d(340) {
-    font-size: 50px;
+  @include d(600) {
+    font-size: 44px;
   }
 }
 
 h2 {
+  font-size: 60px;
   line-height: 1em;
+
+  @include d(992) {
+    font-size: 50px;
+  }
+
+  @include d(600) {
+    font-size: 38px;
+  }
 }
 
 h3 {
+  font-size: 34px;
   line-height: 1em;
 }
 
 h4 {
-  font-size: 40px;
-  line-height: 1em;
+  font-family: 'Futura PT';
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.2em;
+  letter-spacing: -0.05em;
+  margin-bottom: 29px;
 }
 
 h5 {
+  font-family: 'Futura PT';
   font-size: 24px;
-  line-height: 1em;
+  line-height: 1.250em;
+  margin-bottom: 14px;
+  letter-spacing: -0.05em;
 }
 
 h6 {
@@ -311,14 +315,8 @@ template {
 
 p,
 li {
-  line-height: 1.5em;
+  line-height: 1.2em;
   margin: 0;
-  font-size: 18px;
-  color: $black;
-
-  @include d(768) {
-    font-size: 16px;
-  }
 }
 
 ul,
@@ -332,14 +330,33 @@ ol {
   }
 }
 
-section.section {
+.section {
   position: relative;
   overflow: hidden;
 
-  // height: 100vh;
-  // height: 100%;
-  .container_lg {
-    height: 100%;
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 125%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-image: url(../img/title-decor.png);
+    }
   }
 }
 
@@ -406,26 +423,34 @@ textarea,
 input {
   &::-webkit-input-placeholder {
     // font-family: $font-primary;
-    font-size: 16px;
-    color: $black;
+    font-size: 17px;
+    color: rgba($white, .5);
+    font-weight: 300;
   }
 
   &::-moz-placeholder {
     // font-family: $font-primary;
-    font-size: 16px;
-    color: $black;
+    font-size: 17px;
+    color: rgba($white, .5);
+
+    font-weight: 300;
+
   }
 
   &:-ms-input-placeholder {
     // font-family: $font-primary;
-    font-size: 16px;
-    color: $black;
+    font-size: 17px;
+    color: rgba($white, .5);
+    font-weight: 300;
+
   }
 
   &::placeholder {
     // font-family: $font-primary;
-    font-size: 16px;
-    color: $black;
+    font-size: 17px;
+    color: rgba($white, .5);
+    font-weight: 300;
+
   }
 }
 
@@ -439,26 +464,19 @@ input {
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1268px;
   margin: 0 auto;
   padding: 0 15px;
+  position: relative;
+  z-index: 1;
 
-  &_lg {
-    max-width: 1440px;
-    padding: 0 15px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+  @include d(1280) {
+    max-width: 1140px;
+  }
 
-    @include d(1300) {
-      max-width: 95%;
-      padding: 0;
-    }
-
-    @include d(767) {
-      max-width: 100%;
-      padding: 0 30px;
-    }
+  @include d(1024) {
+    max-width: 100%;
+    padding: 0 30px;
   }
 }
 
@@ -480,25 +498,10 @@ main {
 
 .title-2 {
   @extend h2;
-  font-size: 90px;
-  line-height: 1.125em;
-
-  @include d(1399) {
-    font-size: 80px;
-  }
-
-  @include d(991) {
-    font-size: 60px;
-  }
-
-  @include d(575) {
-    font-size: 54px;
-  }
 }
 
 .title-3 {
   @extend h3;
-  font-size: 50px;
 }
 
 .title-4 {
@@ -511,5 +514,110 @@ main {
 
 .title-6 {
   @extend h6;
+}
+
+
+.btn {
+  background-color: transparent;
+  padding: 16px 32px;
+  font-size: 18px;
+  line-height: 23px;
+  color: $white;
+  letter-spacing: -0.05em;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 400;
+  border: 1px solid $white;
+  text-align: center;
+  border-radius: 80px;
+  transition: background-color $hover-duration $timing, border-color $hover-duration $timing;
+
+  @include d(1024) {
+    font-size: 16px;
+  }
+
+  @include d(992) {
+    padding: 10px 20px;
+  }
+
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &_gray {
+    color: $gray;
+    border: 1px solid rgba(133, 147, 163, 0.32);
+
+    &:hover {
+      background-color: $primary;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  &_white {
+    color: $black;
+    border-color: $white;
+    background-color: $white;
+
+    &:hover {
+      background-color: $primary;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  &_blue {
+    color: $white;
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $white;
+    }
+  }
+}
+
+.scroll-btn {
+  position: absolute;
+  bottom: 50px;
+  right: 30px;
+
+  @include d(992) {
+    display: none;
+  }
+}
+
+.circle {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background: linear-gradient(180.05deg, #055EFF 0.04%, rgba(5, 94, 255, 0) 141.99%);
+  filter: drop-shadow(5.53125px 7.375px 73.75px rgba(148, 148, 148, 0.16));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  &-icon {
+    width: 33px;
+  }
+
+  &::before {
+    content: "";
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    background-color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
 }
 

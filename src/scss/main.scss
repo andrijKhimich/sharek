@@ -13,7 +13,7 @@
 
 // @import "../libs/bootstrap4/dist/css/bootstrap.min.css"
 // @import "../libs/bootstrap-4.6.0/scss/bootstrap.scss"
-
+// @import "../libs/nice-select/css/nice-select.css";
 
 // base styles for project
 @import "base/fonts";
@@ -23,7 +23,7 @@
 // project components
 @import "components/header";
 @import "components/footer";
-@import "components/modal";
+// @import "components/modal";
 @import "components/slick";
 
 // project pages

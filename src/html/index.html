@@ -1,20 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Project | Home</title>
-    @@include('links/_head.html')
-  </head>
+<head>
+  <title>Project | Home</title>
+  @@include('links/_head.html')
+</head>
 
-  <body>
-    <div class="main-wrapper home-page">
-      @@include('components/_header.html')
-      <main class="main">
-        <h1>Hello</h1>
-      </main>
-      @@include('components/_footer.html')
-    </div>
-    @@include('links/_scripts.html')
-  </body>
+<body>
+  <div class="main-wrapper home-page js-fadeIn">
+    @@include('components/_header.html')
+    <main class="main">
+      <section class="section hero" id="hero">
+        <div class="hero__img">
+          <img src="./img/ellipse.png" alt="ellipse">
+        </div>
+        <div class="container">
+          <div class="section-row">
+            <div class="hero__content">
+              <h1 class="title-1">Trusted and safe Bitcoin mixing solutions</h1>
+              <p>Don’t let anyone track your bitcoins.</p>
+              <p> Use verified solutions for standard or clean mixing.</p>
+              <div class="btn-row">
+                <a href="#" class="btn">Standard mix</a>
+                <a href="#" class="btn">Clean mix</a>
+              </div>
+              <ul class="hero-logos">
+                <li class="hero-logos__item">
+                  <a href="#" class="hero-logos__link">
+                    <img src="./img/bitcoin.png" alt="bitcoin">
+                  </a>
+                </li>
+                <li class="hero-logos__item">
+                  <a href="#" class="hero-logos__link">
+                    <img src="./img/wwh.png" alt="wwhclub">
+                  </a>
+                </li>
+                <li class="hero-logos__item">
+                  <a href="#" class="hero-logos__link">
+                    <img src="./img/exploit.png" alt="exploit">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#howWeWorks" class="scroll-btn">
+            <img src="./img/arrow-down.svg" alt="arrow">
+          </a>
+        </div>
+      </section>
+      <section class="section how-we-work" id="howWeWorks">
+        <div class="container">
+          <div class="section__title how-we-work__title">
+            <h2 class="title-2">How we work?</h2>
+          </div>
+          <div class="how-we-work__row">
+            <div class="how-we-work__item">
+              <div class="how-we-work__img circle">
+                <span class="how-we-work__step">
+                  1
+                </span>
+                <svg class="circle-icon">
+                  <use xlink:href="./img/svg/sprite-svg/sprite.svg#click">
+                  </use>
+                </svg>
+              </div>
+              <div class="how-we-work__content">
+                <h5 class="title-5">Choose mixing type</h5>
+                <p>Check out and choose one of two ways to clear bitcoin.</p>
+              </div>
+            </div>
+            <div class="how-we-work__item">
+              <div class="how-we-work__img circle">
+                <span class="how-we-work__step">
+                  2
+                </span>
+                <svg class="circle-icon">
+                  <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallet">
+                  </use>
+                </svg>
+              </div>
+              <div class="how-we-work__content">
+                <h5 class="title-5">Wallets addresses</h5>
+                <p>Add from one to three addresses that will finally receive clean bitcoins</p>
+              </div>
+            </div>
+            <div class="how-we-work__item">
+
+              <div class="how-we-work__img circle">
+                <span class="how-we-work__step">
+                  3
+                </span>
+                <svg class="circle-icon">
+                  <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallets">
+                  </use>
+                </svg>
+              </div>
+              <div class="how-we-work__content">
+                <h5 class="title-5">Transfer funds</h5>
+                <p>Deposit money to the official service wallet. Each wallet is active for 7 days only</p>
+              </div>
+            </div>
+            <div class="how-we-work__item">
+
+              <div class="how-we-work__img circle">
+                <span class="how-we-work__step">
+                  4
+                </span>
+                <svg class="circle-icon">
+                  <use xlink:href="./img/svg/sprite-svg/sprite.svg#check">
+                  </use>
+                </svg>
+              </div>
+              <div class="how-we-work__content">
+                <h5 class="title-5">Get cleaned Bitcoins</h5>
+                <p>Wait for 2 confirmations of the transaction in the blockchain network and receive money to the
+                  addresses you specified</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section mix" id="mix">
+        <div class="container">
+          <div class="section__title mix__title">
+            <h2 class="title-2">Start today, with standatd mix or clean mix - you choose</h2>
+          </div>
+          <div class="mix__content">
+            <div class="mix-item mix-item">
+              <div class="mix-item__title">
+                <p>Standard mix</p>
+              </div>
+              <div class="mix-item__header">
+                <span>%10</span>
+                <p>Per month</p>
+              </div>
+              <div class="mix-item__content">
+                <p>This mixing mode is made for crypto holders who are looking for fast, reliable and inexpensive
+                  mixing. In this case you will receive money of people who used mixer before you. Choose that mode if
+                  you want to save on transaction fees but still remain anonymous and safe</p>
+              </div>
+              <hr>
+              <a href="#" class="btn btn_gray">Go for Standard mix</a>
+            </div>
+            <div class="mix-item mix-item_best">
+              <div class="mix-item__title">
+                <p>Clean mix</p>
+              </div>
+              <div class="mix-item__header">
+                <span>%20</span>
+                <p>Per month</p>
+              </div>
+              <div class="mix-item__content">
+                <p>This mode allows crypto holders receiving completely clean and anonymous Bitcoins that come from
+                  cryptocurrency exchanges and/or miners. Choose this mode if you want to receive completely clean coins
+                  with lowest available AML score perecentage</p>
+              </div>
+              <hr>
+              <a href="#" class="btn btn_white">Go for Clean mix</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section news" id="news">
+        <div class="container">
+          <div class="section-row">
+            <div class="news__content">
+              <div class="section__title news__title">
+                <h2 class="title-2">Our Lates News & Blog</h2>
+              </div>
+              <h4 class="title-4">Группировка LightBasin использует Unix-руткит для кражи данных банкоматов.</h4>
+              <p>В своём стремлении повысить качество жизни, они забывают, что глубокий уровень погружения, а также
+                свежий взгляд на привычные вещи - безусловно открывает новые горизонты для стандартных подходов.
+                Принимая во внимание показатели успешности, базовый вектор развития способствует подготовке и реализации
+                укрепления моральных ценностей. Есть над чем задуматься: сделанные на базе интернет-аналитики выводы
+                представлены в.</p>
+              <a href="#" class="btn btn_blue">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="news-slider">
+          <div class="news-slider__item">
+            <div class="news-slider__content">
+              <h4 class="title-4">Группировка LightBasin использует Unix-руткит для кражи данных банкоматов.</h4>
+              <div class="news-slider__footer">
+                <div class="news-slider__date">
+                  <p>Published</p>
+                  <span>1 hour ago</span>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="news-slider__item">
+            <div class="news-slider__content">
+              <h4 class="title-4">Группировка LightBasin использует Unix-руткит для кражи данных банкоматов.</h4>
+              <div class="news-slider__footer">
+                <div class="news-slider__date">
+                  <p>Published</p>
+                  <span>1 hour ago</span>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="news-slider__item">
+            <div class="news-slider__content">
+              <h4 class="title-4">Группировка LightBasin использует Unix-руткит для кражи данных банкоматов.</h4>
+              <div class="news-slider__footer">
+                <div class="news-slider__date">
+                  <p>Published</p>
+                  <span>1 hour ago</span>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="news-slider__item">
+            <div class="news-slider__content">
+              <h4 class="title-4">Группировка LightBasin использует Unix-руткит для кражи данных банкоматов.</h4>
+              <div class="news-slider__footer">
+                <div class="news-slider__date">
+                  <p>Published</p>
+                  <span>1 hour ago</span>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="news-slider__item">
+            <div class="news-slider__content">
+              <h4 class="title-4">Группировка LightBasin использует Unix-руткит для кражи данных банкоматов.</h4>
+              <div class="news-slider__footer">
+                <div class="news-slider__date">
+                  <p>Published</p>
+                  <span>1 hour ago</span>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section monitor" id="monitor">
+        <div class="container">
+          <div class="monitor__row">
+            <div class="monitor__content">
+              <div class="section__title monitor__title">
+                <h2 class="title-2">Mix monitor</h2>
+              </div>
+            </div>
+            <div class="monitor__data">
+              <div class="monitor__graph">
+                <canvas id="myChart"></canvas>
+                <!-- <img src="./img/monitor.png" alt=""> -->
+              </div>
+              <div class="monitor__statistic">
+                <div class="monitor__item">
+                  <p>Mixed for today</p>
+                  <span>#100</span>
+                </div>
+                <div class="monitor__item">
+                  <p>For today</p>
+                  <span><img src="./img/bitcoin-logo.svg" alt="bitcoin">0.4567 BTC</span>
+                </div>
+                <div class="monitor__item">
+                  <p>All time volume</p>
+                  <span>4.000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section faq" id="faq">
+        <div class="container">
+          <div class="section__title faq__title">
+            <h2 class="title-2">Got questions?
+              We have answers.</h2>
+          </div>
+          <div class="faq__content">
+            <div class="faq__col">
+              <div class="faq__item">
+                <button class="faq__btn">How clean mix works.</button>
+                <div class="faq__panel">
+                  <p>В своём стремлении повысить качество жизни, они забывают, что глубокий уровень погружения, а также
+                    свежий взгляд
+                    на привычные вещи - безусловно открывает новые горизонты для стандартных подходов. </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq__col">
+              <div class="faq__item">
+                <button class="faq__btn">What are service fees.</button>
+                <div class="faq__panel">
+                  <p>В своём стремлении повысить качество жизни, они забывают, что глубокий уровень погружения, а также
+                    свежий взгляд на привычные вещи - безусловно открывает новые горизонты для стандартных подходов.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq__col">
+              <div class="faq__item">
+                <button class="faq__btn">What's difference between standard and clean mix.</button>
+                <div class="faq__panel">
+                  <p>В своём стремлении повысить качество жизни, они забывают, что глубокий уровень погружения, а также
+                    свежий взгляд на привычные вещи - безусловно открывает новые горизонты для стандартных подходов.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq__col">
+              <div class="faq__item">
+                <button class="faq__btn">Is it safe to mix big amounts.</button>
+                <div class="faq__panel">
+                  <p>В своём стремлении повысить качество жизни, они забывают, что глубокий уровень погружения, а также
+                    свежий взгляд на привычные вещи - безусловно открывает новые горизонты для стандартных подходов.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq__col">
+              <div class="faq__item">
+                <button class="faq__btn">Does your service store logs?</button>
+                <div class="faq__panel">
+                  <p>В своём стремлении повысить качество жизни, они забывают, что глубокий уровень погружения, а также
+                    свежий взгляд на привычные вещи - безусловно открывает новые горизонты для стандартных подходов.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="contact-row">
+            <div class="contact__content">
+              <div class="section__title contact__title">
+                <h2 class="title-2">Contacts</h2>
+              </div>
+              <p>В своём стремлении повысить качество жизни, они забывают, что глубокий уровень погружения, а также
+                свежий
+                взгляд на привычные вещи - безусловно открывает новые горизонты для стандартных подходов. </p>
+              <div class="contact__logos">
+                <ul class="hero-logos">
+                  <li class="hero-logos__item">
+                    <a href="#" class="hero-logos__link">
+                      <img src="./img/bitcoin.png" alt="bitcoin">
+                    </a>
+                  </li>
+                  <li class="hero-logos__item">
+                    <a href="#" class="hero-logos__link">
+                      <img src="./img/wwh.png" alt="wwhclub">
+                    </a>
+                  </li>
+                  <li class="hero-logos__item">
+                    <a href="#" class="hero-logos__link">
+                      <img src="./img/exploit.png" alt="exploit">
+                    </a>
+                  </li>
+                </ul>
+                <div class="contact__img">
+                  <img src="./img/coin.png" alt="bitcoin">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('components/_footer.html')
+  </div>
+  @@include('links/_scripts.html')
+</body>
 
 </html>
