@@ -65,14 +65,97 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //  document.addEventListener("scroll", () => {
-  //   closeMenu();
-  //   if (window.scrollY || heroSection.scrollTop >= 1) {
-  //     header.classList.add('fixed');
-  //   } else {
-  //     header.classList.remove('fixed');
-  //   }
+
+  const mixContent = document.querySelector(".js-mix");
+  const btnStandart = document.querySelector("#btnStandartMix");
+  const modals = document.querySelectorAll(".modal");
+  const formTemplate = document.querySelector(".form-content");
+  const btnPlus = document.querySelector(".js-plus");
+
+  const btnClean = document.querySelector("#btnCleanMix");
+  const formBtn = document.querySelector(".form-modal-1 .btn")
+
+
+  formTemplate.addEventListener("click", (event) => {
+    if (event.target.classList.contains("active") && event.target.tagName === "IMG") {
+      event.target.classList.remove('active');
+      formTemplate.removeChild(formTemplate.lastChild);
+    } else if (event.target.tagName === "IMG") {
+      event.target.classList.add("active");
+      const inputTemplate =
+        `<div class="form-box">
+          <input type="text" placeholder="Keep your wallet:" class="form-input js-input">
+        </div>`;
+      formTemplate.innerHTML += inputTemplate;
+    }
+  });
+
+
+  btnStandart.addEventListener("click", e => {
+    e.preventDefault();
+    mixContent.classList.add("hidden");
+    let btnHref = btnStandart.getAttribute("href");
+    for (let i = 0; i <= modals.length; i++) {
+      console.log(modals[i].getAttribute("id"));
+      if (btnHref === modals[i].getAttribute("id")) {
+        modals[i].classList.add("active");
+        break
+      }
+    }
+  });
+
+  btnClean.addEventListener("click", e => {
+    e.preventDefault();
+    mixContent.classList.add("hidden");
+    let btnHref = btnClean.getAttribute("href");
+    for (let i = 0; i <= modals.length; i++) {
+      console.log(modals[i].getAttribute("id"));
+      if (btnHref === modals[i].getAttribute("id")) {
+        modals[i].classList.add("active");
+        break
+      }
+    }
+  });
+
+
+  const btnCopy = document.querySelectorAll(".js-copy");
+
+  btnCopy.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      var copyText = btn.nextElementSibling;
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+      navigator.clipboard.writeText(copyText.value);
+      const copyPopup = document.querySelector(".copy-text");
+      copyPopup.classList.add("show");
+      setTimeout(() => {
+        copyPopup.classList.remove("show");
+      }, 2000);
+    })
+  })
+
+  document.querySelectorAll('.js-btn-modal').forEach(btn => {
+    btn.addEventListener('click', e => {
+      //handle click
+      e.preventDefault();
+      // modals.classList.remove("active");
+      modals.forEach(modal => {
+        modal.classList.remove("active")
+      });
+      let btnHref = btn.getAttribute("href");
+      for (let i = 0; i <= modals.length; i++) {
+        console.log(modals[i].getAttribute("id"));
+        if (btnHref === modals[i].getAttribute("id")) {
+          modals[i].classList.add("active");
+          break
+        }
+      }
+    })
+  })
+  // btnModal.addEventListener("click", e => {
+
   // });
+
 
   // jQuery for scrolling
   // const sectionArray = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -110,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $('.scroll-btn[href^="#"], .nav-list__link[href^="#"]').on('click', function (e) {
     e.preventDefault();
-    // $(this).addClass("active");
     closeMenu();
     $('html, body').animate({
       scrollTop: $($(this).attr('href')).offset().top
@@ -121,19 +203,19 @@ document.addEventListener("DOMContentLoaded", () => {
   //   parent.$.fancybox.close();
   // });
 
-  const showOnScroll = () => {
-    $('.section').each(function () {
-      let sectionPos = $(this).offset().top;
-      let windowPos = $(window).scrollTop() + $(window).height() / 3;
+  // const showOnScroll = () => {
+  //   $('.section').each(function () {
+  //     let sectionPos = $(this).offset().top;
+  //     let windowPos = $(window).scrollTop() + $(window).height() / 3;
 
-      if (sectionPos < windowPos) {
-        $(this).addClass('show');
-      }
-    });
-  }
-  $(window).scroll(function () {
-    // showOnScroll();
-  });
+  //     if (sectionPos < windowPos) {
+  //       $(this).addClass('show');
+  //     }
+  //   });
+  // }
+  // $(window).scroll(function () {
+  // showOnScroll();
+  // });
 
   // $("")
 
@@ -170,6 +252,8 @@ document.addEventListener("DOMContentLoaded", () => {
   newsSlider();
 
 
+
+  // monitor graphic functionality 
 
   const labels = [
     '1',

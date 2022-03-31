@@ -121,43 +121,219 @@
         </div>
       </section>
       <section class="section mix" id="mix">
-        <div class="container">
-          <div class="section__title mix__title">
-            <h2 class="title-2">Start today, with standatd mix or clean mix - you choose</h2>
+        <div class="copy-text">
+          <p>Key is copied!</p>
+        </div>
+        <div class="mix-container js-mix">
+          <div class="container">
+            <div class="section__title mix__title">
+              <h2 class="title-2">Start today, with standatd mix or clean mix - you choose</h2>
+            </div>
+            <div class="mix__content">
+              <div class="mix-item mix-item">
+                <div class="mix-item__title">
+                  <p>Standard mix</p>
+                </div>
+                <div class="mix-item__header">
+                  <span>%10</span>
+                  <p>Per month</p>
+                </div>
+                <div class="mix-item__content">
+                  <p>This mixing mode is made for crypto holders who are looking for fast, reliable and inexpensive
+                    mixing. In this case you will receive money of people who used mixer before you. Choose that mode if
+                    you want to save on transaction fees but still remain anonymous and safe</p>
+                </div>
+                <hr>
+                <a href="modal-1" class="btn btn_gray" id="btnStandartMix">Go for Standard mix</a>
+              </div>
+              <div class="mix-item mix-item_best">
+                <div class="mix-item__title">
+                  <p>Clean mix</p>
+                </div>
+                <div class="mix-item__header">
+                  <span>%20</span>
+                  <p>Per month</p>
+                </div>
+                <div class="mix-item__content">
+                  <p>This mode allows crypto holders receiving completely clean and anonymous Bitcoins that come from
+                    cryptocurrency exchanges and/or miners. Choose this mode if you want to receive completely clean
+                    coins
+                    with lowest available AML score perecentage</p>
+                </div>
+                <hr>
+                <a href="modal-1" class="btn btn_white" id="btnCleanMix">Go for Clean mix</a>
+              </div>
+            </div>
           </div>
-          <div class="mix__content">
-            <div class="mix-item mix-item">
-              <div class="mix-item__title">
-                <p>Standard mix</p>
+        </div>
+        <div class="modal" id="modal-1">
+          <div class="container">
+            <div class="modal-row">
+              <div class="modal-form">
+                <div class="modal__title">
+                  <h1 class="title-1">Standard mix</h1>
+                  <p>Don’t let anyone track your bitcoins. </p>
+                  <p>Use verified solutions for standard or clean mixing.</p>
+                </div>
+                <form class="form-modal-1">
+                  <div class="form-content">
+                    <div class="form-box">
+                      <img class="plus js-plus" src="./img/svg/plus.svg" alt="plus">
+                      <input type="text" placeholder="Keep your wallet:" class="form-input js-input">
+                    </div>
+                  </div>
+                  <a href="modal-2" class="btn btn_blue js-btn-modal">Mix</a>
+                </form>
               </div>
-              <div class="mix-item__header">
-                <span>%10</span>
-                <p>Per month</p>
+              <div class="modal__steps">
+                <div class="modal-step__row">
+                  <div class="modal-step__item">
+                    <div class="modal-step__img circle">
+                      <svg class="circle-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallet">
+                        </use>
+                      </svg>
+                    </div>
+                    <div class="modal-step__content">
+                      <h5 class="title-5">Wallets addresses</h5>
+                      <p>Add from one to three addresses that will finally receive clean bitcoins</p>
+                    </div>
+                  </div>
+                  <div class="modal-step__item inactive">
+                    <div class="modal-step__img circle">
+                      <svg class="circle-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallets">
+                        </use>
+                      </svg>
+                    </div>
+                    <div class="modal-step__content">
+                      <h5 class="title-5">Transfer funds</h5>
+                      <p>Deposit money to the official service wallet. Each wallet is active for 7 days only</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="mix-item__content">
-                <p>This mixing mode is made for crypto holders who are looking for fast, reliable and inexpensive
-                  mixing. In this case you will receive money of people who used mixer before you. Choose that mode if
-                  you want to save on transaction fees but still remain anonymous and safe</p>
-              </div>
-              <hr>
-              <a href="#" class="btn btn_gray">Go for Standard mix</a>
             </div>
-            <div class="mix-item mix-item_best">
-              <div class="mix-item__title">
-                <p>Clean mix</p>
+          </div>
+        </div>
+        <div class="modal" id="modal-2">
+          <div class="container">
+            <div class="modal-row">
+              <div class="modal-form">
+                <div class="modal__title">
+                  <h1 class="title-1">Standard mix</h1>
+                  <p>Don’t let anyone track your bitcoins. </p>
+                  <p>Use verified solutions for standard or clean mixing.</p>
+                </div>
+                <form>
+                  <div class="form-box">
+                    <img class="copy js-copy" src="./img/svg/copy.svg" alt="copy">
+                    <input type="text" value="dfsdf6sd7f6s98df7s9df0sd8f0sd8f0s9d8f0s" placeholder="Keep your wallet:"
+                      class="form-input js-input">
+                  </div>
+                  <div class="form-box">
+                    <img class="copy js-copy" src="./img/svg/copy.svg" alt="copy">
+                    <input type="text" value="dfsdf6sd7f6s98df7s9df0sd8f0sd8f0s9d8ddd" placeholder="Keep your wallet:"
+                      class="form-input js-input">
+                  </div>
+                  <div class="modal-btn__row">
+                    <a href="modal-3" class="btn btn_blue js-btn-modal btn_icon btn_status">
+                      Check Status
+                      <div class="loader"></div>
+                    </a>
+                    <a href="modal-3" class="btn btn_icon js-btn-modal">
+                      Download
+                      <svg class="btn-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#download">
+                        </use>
+                      </svg>
+                    </a>
+                    <p>Нажимая на кнопку, вы даёте согласие на обработку <a href="#">персональных данных</a></p>
+                  </div>
+                </form>
               </div>
-              <div class="mix-item__header">
-                <span>%20</span>
-                <p>Per month</p>
+              <div class="modal__steps">
+                <div class="modal-step__row">
+                  <div class="modal-step__item inactive">
+                    <div class="modal-step__img circle">
+                      <svg class="circle-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallet">
+                        </use>
+                      </svg>
+                    </div>
+                    <div class="modal-step__content">
+                      <h5 class="title-5">Wallets addresses</h5>
+                      <p>Add from one to three addresses that will finally receive clean bitcoins</p>
+                    </div>
+                  </div>
+                  <div class="modal-step__item">
+                    <div class="modal-step__img circle">
+                      <svg class="circle-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#wallets">
+                        </use>
+                      </svg>
+                    </div>
+                    <div class="modal-step__content">
+                      <h5 class="title-5">Transfer funds</h5>
+                      <p>Deposit money to the official service wallet. Each wallet is active for 7 days only</p>
+                    </div>
+                    <a href="#">
+                      <svg class="arrow-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#left">
+                        </use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="mix-item__content">
-                <p>This mode allows crypto holders receiving completely clean and anonymous Bitcoins that come from
-                  cryptocurrency exchanges and/or miners. Choose this mode if you want to receive completely clean coins
-                  with lowest available AML score perecentage</p>
-              </div>
-              <hr>
-              <a href="#" class="btn btn_white">Go for Clean mix</a>
             </div>
+          </div>
+        </div>
+        <div class="modal" id="modal-3">
+          <div class="container">
+            <div class="modal-row">
+              <div class="modal-form">
+                <div class="modal__title">
+                  <h1 class="title-1">Standard mix</h1>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+                <form>
+                  <div class="modal-btn__row">
+                    <a href="/img/logo.svg" download class="btn btn_blue btn_icon">
+                      Download
+                      <svg class="btn-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#download">
+                        </use>
+                      </svg>
+                    </a>
+                    <p>Нажимая на кнопку, вы даёте согласие на обработку <a href="#">персональных данных</a></p>
+                  </div>
+                </form>
+              </div>
+              <div class="modal__steps">
+                <div class="modal-step__row">
+                  <div class="modal-step__item splash">
+                    <div class="modal-step__img circle">
+                      <svg class="circle-icon">
+                        <use xlink:href="./img/svg/sprite-svg/sprite.svg#check">
+                        </use>
+                      </svg>
+                    </div>
+                    <div class="modal-step__content">
+                      <h5 class="title-5">Get cleaned Bitcoins</h5>
+                      <p>Wait for 2 confirmations of the transaction in the blockchain network and receive money to the
+                        addresses you specified</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -248,11 +424,80 @@
               <div class="section__title monitor__title">
                 <h2 class="title-2">Mix monitor</h2>
               </div>
+              <div class="monitor__table">
+                <table>
+                  <tr>
+                    <td>
+                      <p>№1</p>
+                    </td>
+                    <td>
+                      <p>in 5 hours</p>
+                    </td>
+                    <td>
+                      <p>0,00044 BTC <span>($2,106.64)</span></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>№2</p>
+                    </td>
+                    <td>
+                      <p>in 5 hours</p>
+                    </td>
+                    <td>
+                      <p>46 BTC <span>($2,106.64)</span></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>№3</p>
+                    </td>
+                    <td>
+                      <p>in 5 hours</p>
+                    </td>
+                    <td>
+                      <p>67 BTC <span>($2,106.64)</span></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>№4</p>
+                    </td>
+                    <td>
+                      <p>in 5 hours</p>
+                    </td>
+                    <td>
+                      <p>127 BTC <span> ($2,106.64)</span></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>№5</p>
+                    </td>
+                    <td>
+                      <p>in 5 hours</p>
+                    </td>
+                    <td>
+                      <p>1 200 BTC <span>($2,106.64)</span></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>№6</p>
+                    </td>
+                    <td>
+                      <p>in 5 hours</p>
+                    </td>
+                    <td>
+                      <p>3 687 BTC <span> ($2,106.64)</span></p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
             <div class="monitor__data">
               <div class="monitor__graph">
                 <canvas id="myChart"></canvas>
-                <!-- <img src="./img/monitor.png" alt=""> -->
               </div>
               <div class="monitor__statistic">
                 <div class="monitor__item">
