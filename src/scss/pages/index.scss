@@ -1,7 +1,7 @@
 .hero {
-  padding: 121px 0;
+  padding: 121px 0 40px 0;
 
-  @include d(768) {
+  @include d(992) {
     padding: 80px 0 0 0;
   }
 
@@ -33,7 +33,7 @@
     max-width: 800px;
     margin: 47px 0;
 
-    @include d(992) {
+    @include d(1024) {
       max-width: 100%;
     }
 
@@ -69,6 +69,11 @@
       opacity: .5;
       transition: opacity $hover-duration $timing;
 
+      @include d(992) {
+        opacity: 1;
+        position: relative;
+      }
+
       &:hover {
         opacity: 1;
       }
@@ -79,7 +84,7 @@
 .btn-row {
   margin: 67px 0 110px;
 
-  @include d(992) {
+  @include d(1024) {
     margin: 80px 0;
   }
 
@@ -110,7 +115,7 @@
   &__row {
     display: flex;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     margin: 20px -22px;
     flex-wrap: wrap;
@@ -120,13 +125,34 @@
     position: relative;
     padding: 22px;
     flex: 0 0 25%;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      width: 190px;
+      height: 190px;
+      position: absolute;
+      background-color: $primary;
+      opacity: .3;
+      filter: blur(50px);
+      border-radius: 50%;
+      top: -20px;
+      left: 20px;
+      z-index: -1;
+
+      @include d(1024) {
+        top: -40px;
+        left: 35%;
+        opacity: .2;
+      }
+    }
 
     .title-5,
     h5 {
       color: $white;
     }
 
-    @include d(992) {
+    @include d(1024) {
       flex: 0 0 50%;
       margin-bottom: 40px;
       text-align: center;
@@ -138,11 +164,11 @@
 
     &::before {
       content: "";
-      width: 100px;
+      width: 70px;
       height: 22px;
       position: absolute;
       top: 40%;
-      left: 65%;
+      left: 76%;
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -150,7 +176,7 @@
     &:nth-child(odd)::before {
       background-image: url(../img/step-border.svg);
 
-      @include d(992) {
+      @include d(1024) {
         display: none;
       }
     }
@@ -159,7 +185,7 @@
       background-image: url(../img/step-border2.svg);
       top: 20%;
 
-      @include d(992) {
+      @include d(1024) {
         display: none;
       }
     }
@@ -175,7 +201,7 @@
   }
 
   &__img {
-    @include d(992) {
+    @include d(1024) {
       margin: 0 auto 20px auto;
     }
   }
@@ -203,16 +229,16 @@
     color: $gray;
     max-width: 300px;
 
-    @include d(992) {
+    @include d(1024) {
       margin: 0 auto;
     }
   }
 }
 
 .mix {
-  padding: 58px 0;
+  padding: 68px 0;
 
-  @include d(768) {
+  @include d(992) {
     padding: 40px 0;
   }
 
@@ -229,7 +255,7 @@
     background-repeat: no-repeat;
     background-position: bottom left;
 
-    @include d(992) {
+    @include d(1024) {
       bottom: 0;
     }
   }
@@ -266,7 +292,7 @@
     align-items: flex-start;
     margin: 57px 30px 0 30px;
 
-    @include d(992) {
+    @include d(1024) {
       margin: 50px 0 0 0;
       justify-content: space-between;
     }
@@ -286,7 +312,7 @@
     color: #8593A3;
     max-width: 583px;
 
-    @include d(992) {
+    @include d(1024) {
       max-width: 50%;
     }
 
@@ -298,7 +324,7 @@
     &:not(:last-child) {
       margin-right: 30px;
 
-      @include d(992) {
+      @include d(1024) {
         margin-right: 10px;
       }
     }
@@ -311,9 +337,10 @@
       background-color: $primary;
       color: $white;
       max-width: 362px;
-      margin-top: -125px;
+      margin-top: -60px;
+      box-shadow: 0px 8px 80px rgba(14, 109, 255, 0.54);
 
-      @include d(992) {
+      @include d(1024) {
         max-width: 50%;
         margin-top: 0;
       }
@@ -387,9 +414,9 @@
 }
 
 .news {
-  padding: 100px 0 30px 0;
+  padding: 126px 0 30px 0;
 
-  @include d(768) {
+  @include d(992) {
     padding: 40px 0 30px 0;
   }
 
@@ -406,7 +433,7 @@
     top: -10%;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 1;
+    z-index: 0;
   }
 
   &__title {
@@ -423,11 +450,13 @@
   &__content {
     max-width: 450px;
     margin-right: 50px;
+    width: 40vw;
 
-    @include d(992) {
+    @include d(1024) {
       margin-right: 0;
       max-width: 100%;
       margin-bottom: 50px;
+      width: 100%;
     }
 
     p {
@@ -444,33 +473,22 @@
     right: 0;
     bottom: 0;
     max-width: 830px;
+    width: 50vw;
     z-index: 1;
 
-    @include d(1280) {
-      right: -130px;
-    }
-
-    @include d(1199) {
-      right: -180px;
-    }
-
     @include d(1024) {
-      right: -340px;
-    }
-
-    @include d(992) {
+      width: 100%;
       position: relative;
       right: 0;
       top: 0;
       bottom: auto;
       max-width: 100%;
-      // padding: 0 30px;
-      margin: 0 30px;
+      padding: 0 30px;
     }
 
     &__item {
-      height: 609px;
-      padding: 26px;
+      height: 420px;
+      padding: 15px;
       border-radius: 20px;
       overflow: hidden;
       display: flex;
@@ -479,59 +497,86 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      margin: 0 40px 30px 0;
+      margin: 0 15px 30px 0;
 
-      @include d(992) {
+      @include d(1024) {
         margin: 0 10px 30px 10px;
-        height: 500px;
-
       }
     }
 
     &__content {
-      padding: 26px;
+      padding: 15px;
       background-color: $bgColor;
       color: $white;
       border-radius: 20px;
       margin: 0 auto;
+
+      .title-4,
+      h4 {
+        margin-bottom: 50px;
+        letter-spacing: -0.05em;
+        line-height: 1.250em;
+        font-size: 22px;
+        @include d(1024) {
+          font-size: 18px;
+        }
+      }
     }
 
     &__footer {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+
+      .btn {
+        padding: 10px 15px;
+        font-size: 16px;
+      }
     }
 
     &__date {
+      margin-bottom: 10px;
+
       p {
         font-size: 14px;
         color: $gray;
         line-height: 0.8em;
-
+        margin-bottom: 4px;
+        font-weight: 400;
       }
 
       span {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 0.5em;
-
       }
+
     }
   }
 }
 
 .monitor {
-  padding: 137px 0 0 0;
+  padding: 159px 0 40px 0;
 
-  @include d(768) {
-    padding: 80px 0 0 0;
+  @include d(992) {
+    padding: 80px 0 40px 0;
   }
 
   &__row {
     display: flex;
     justify-content: space-between;
 
-    @include d(992) {
+    @include d(1024) {
       display: block;
+    }
+  }
+
+  &__title {
+    margin-left: 11px;
+    margin-bottom: 84px;
+
+    @include d(1280) {
+      padding-left: 0;
+      margin-left: 0;
     }
   }
 
@@ -542,19 +587,76 @@
       flex: 0 0 40%;
     }
 
-    @include d(992) {
+    @include d(1024) {
       margin-bottom: 30px;
     }
   }
 
   &__table {
+    margin-left: 10px;
+    max-width: 400px;
+
+    @include d(1280) {
+      margin-left: 0;
+    }
+
+    @include d(1024) {
+      margin: 0 auto 50px auto;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
+      font-family: 'Urbanist';
+
+      tr {
+
+        &:first-child,
+        &:last-child {
+          td {
+            &:first-child {
+              p {
+                &::before {
+                  width: 4px;
+                  height: 4px;
+                }
+              }
+            }
+          }
+        }
+
+        &:nth-child(2),
+        &:nth-child(5) {
+          td {
+            &:first-child {
+              p {
+                &::before {
+                  width: 6px;
+                  height: 6px;
+                }
+              }
+            }
+          }
+        }
+
+        &:nth-child(3),
+        &:nth-child(4) {
+          td {
+            &:first-child {
+              p {
+                &::before {
+                  width: 8px;
+                  height: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
 
       td {
         padding: 15px;
-        border-bottom: 1px solid #666;
+        border-bottom: 1px solid rgba(#F1F1F1, 0.1);
 
         p {
           font-size: 15px;
@@ -567,6 +669,10 @@
         &:first-child {
           padding-left: 0;
 
+          @include d(992) {
+            padding-left: 30px;
+          }
+
           p {
             position: relative;
 
@@ -578,7 +684,7 @@
               border-radius: 50%;
               position: absolute;
               top: 8px;
-              left: -18px;
+              left: -24px;
             }
           }
         }
@@ -603,21 +709,58 @@
 
   &__data {
     flex: 0 0 700px;
+    position: relative;
+
+    @include d(1024) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      max-width: 550px;
+      height: 60px;
+      background-image: url(../img/title-transparent.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
 
     @include d(1199) {
       flex: 0 0 60%;
       margin-left: 20px;
     }
 
-    @include d(992) {
+    @include d(1024) {
       margin-left: 0;
     }
   }
 
   &__graph {
     border: 1px solid $primary;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 20px;
+    height: 435px;
+    margin-top: -10px;
+    max-width: 700px;
+    overflow: hidden;
+
+    canvas {
+      height: 435px !important;
+      width: 100% !important;
+
+    }
+
+    @include d(1280) {
+      margin-top: 0;
+    }
+
+    @include d(1024) {
+      max-width: 100%;
+    }
   }
 
   &__statistic {
@@ -626,8 +769,8 @@
     align-items: flex-start;
     justify-content: center;
 
-    @include d(992) {
-      margin-top: -20px;
+    @include d(1024) {
+      // margin-top: -20px;
     }
   }
 
@@ -640,11 +783,16 @@
 
     &:not(:last-child) {
       margin-right: 40px;
+
+      @include d(1024) {
+        margin-right: 10px;
+      }
     }
 
-    @include d(768) {
-      padding: 18px;
+    @include d(992) {
+      padding: 10px;
       height: 80px;
+
     }
 
     p {
@@ -663,8 +811,12 @@
       align-items: center;
       font-weight: bold;
 
-      @include d(992) {
+      @include d(1024) {
         font-size: 18px;
+      }
+
+      @include d(575) {
+        font-size: 14px;
       }
 
       img {
@@ -677,16 +829,17 @@
 }
 
 .faq {
-  padding: 100px 0 80px 0;
+  padding: 80px 0;
   overflow: initial;
-  &::before { 
+
+  &::before {
     content: "";
     position: absolute;
     right: 0;
     top: 0;
     z-index: 0;
     max-width: 80%;
-    background-image: url(../img/ellipse.png);
+    background-image: url(../img/ellipse-1.png);
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -696,14 +849,14 @@
 
   &__title {
     max-width: 570px;
-    margin-bottom: 110px;
+    margin-bottom: 106px;
 
     &::before {
-      width: 180px;
+      width: 250px;
       height: 25px;
       right: 40px;
       left: auto;
-      top: 100%;
+      top: 105%;
     }
   }
 
@@ -717,7 +870,7 @@
     padding: 0 10px;
     flex: 0 0 50%;
 
-    @include d(768) {
+    @include d(992) {
       flex: 0 0 100%;
     }
   }
@@ -729,13 +882,30 @@
     font-size: 24px;
     line-height: 1.250em;
     letter-spacing: -0.05em;
-    padding: 0 50px;
+    padding: 0 90px 0 50px;
     display: block;
     width: 100%;
     margin: 0;
     text-align: left;
     height: 116px;
     transition: color $hover-duration $timing;
+
+    @include d(1024) {
+      padding: 0 50px;
+    }
+
+    @include d(992) {
+      padding: 0 40px 0 20px;
+      font-size: 18px;
+      height: 80px;
+    }
+
+    &.active {
+      .plus-icon {
+        transform: rotate(45deg);
+        fill: $white;
+      }
+    }
   }
 
   &__item {
@@ -745,20 +915,20 @@
     margin-bottom: 30px;
     transition: background-color $hover-duration $timing, border-color $hover-duration $timing, color $hover-duration $timing;
     position: relative;
+    overflow: hidden;
 
     &.active {
       background-color: $primary;
       color: $white;
       border-color: $white;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
+      // border-bottom-right-radius: 0;
+      // border-bottom-left-radius: 0;
 
       .faq__btn {
         color: $white;
       }
 
       .faq__panel {
-        // opacity: 1;
         top: 100%;
         background-color: $primary;
         border-bottom: 1px solid $white;
@@ -770,18 +940,26 @@
     max-height: 0;
     overflow: hidden;
     padding: 0 50px;
-    border-radius: 0;
-    position: absolute;
+    // border-radius: 0;
+    // position: absolute;
     background-color: $white;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-left: 1px solid $white;
-    border-right: 1px solid $white;
-    width: calc(100% + 2px);
+    // border-bottom-right-radius: 10px;
+    // border-bottom-left-radius: 10px;
+    // border-left: 1px solid $white;
+    // border-right: 1px solid $white;
+    // width: calc(100% + 2px);
     z-index: 1;
-    left: -1px;
-    top: 95%;
+    // left: -1px;
+    // top: 95%;
     transition: max-height $hover-duration $timing, bottom $hover-duration $timing, background-color $hover-duration $timing;
+
+    @include d(1024) {
+      padding: 0 50px;
+    }
+
+    @include d(992) {
+      padding: 0 40px 0 20px;
+    }
 
     p {
       margin-bottom: 50px;
@@ -790,14 +968,14 @@
 }
 
 .contact {
-  padding: 74px 0 0 0;
+  overflow: initial;
 
   &-row {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 
-    @include d(992) {
+    @include d(1024) {
       display: block;
     }
   }
@@ -823,7 +1001,7 @@
       line-height: 1.3em;
       max-width: 450px;
 
-      @include d(992) {
+      @include d(1024) {
         max-width: 100%;
       }
     }
@@ -833,25 +1011,87 @@
     position: relative;
     padding: 38px 0;
     margin: 37px 0;
+    z-index: 2;
 
-    @include d(992) {
+    @include d(1024) {
       margin: 37px 0 0 0;
+    }
+
+    @include d(575) {
+      display: block;
+    }
+
+    .hero-logos {
+      z-index: 1;
+
+      @include d(1024) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      @include d(992) {
+        display: block;
+        position: relative;
+        padding: 20px 0;
+      }
+
+
+      &::before {
+        content: "";
+        width: 150vw;
+        height: 100%;
+        background-color: $primary;
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        position: absolute;
+        right: -50vw;
+        top: 0;
+        display: none;
+
+        @include d(992) {
+          height: 100%;
+          display: block;
+          left: -50vw;
+          width: 150vw;
+          z-index: -1;
+        }
+      }
+
+      .hero-logos__item {
+        @include d(992) {
+          margin: 0 auto 0 auto;
+          display: block;
+
+        }
+
+        &:not(:last-child) {
+          @include d(992) {
+            margin: 0 auto 40px auto;
+          }
+        }
+      }
     }
 
     &::before {
       content: "";
-      width: 100vw;
+      width: 120vw;
       height: 100%;
       background-color: $primary;
       border-top: 1px solid $gray;
       border-bottom: 1px solid $gray;
       position: absolute;
-      right: 160px;
+      right: -20vw;
       top: 0;
+      z-index: -1;
 
-      @include d(992) {
+      @include d(1024) {
         right: -30px;
         height: 100px;
+      }
+
+      @include d(992) {
+        display: none;
       }
     }
 
@@ -863,7 +1103,27 @@
     right: 90px;
     width: 380px;
 
-    @include d(992) {
+    img {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::after {
+      content: "";
+      width: 409px;
+      height: 325px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background: linear-gradient(90deg, rgba(5, 94, 255, 0.5) 0%, rgba(5, 94, 255, 1) 15%, rgba(255, 255, 255, 0) 100%);
+      opacity: .4;
+      filter: blur(200px);
+      // background: linear-gradient(180deg, #FFFFFF 0%, #055EFF 84.9%, rgba(5, 94, 255, 0.5) 100%);
+
+    }
+
+    @include d(1024) {
       position: static;
       margin: 80px auto 0 auto;
     }
@@ -874,6 +1134,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -899,7 +1160,7 @@
     animation: show 1s ease;
   }
 
-  @include d(768) {
+  @include d(992) {
     padding: 80px 0 0 0;
   }
 
@@ -943,7 +1204,7 @@
   display: flex;
   justify-content: space-between;
 
-  @include d(992) {
+  @include d(1024) {
     flex-wrap: wrap;
   }
 }
@@ -952,7 +1213,7 @@
   flex: 0 0 50%;
   max-width: 570px;
 
-  @include d(992) {
+  @include d(1024) {
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -966,7 +1227,7 @@
   flex: 0 0 50%;
   margin-top: 50px;
 
-  @include d(992) {
+  @include d(1024) {
     flex: 0 0 100%;
   }
 }
@@ -1037,7 +1298,7 @@
     justify-content: center;
     margin: 20px;
 
-    @include d(768) {
+    @include d(992) {
       margin: 0;
       flex-wrap: wrap;
     }
@@ -1049,7 +1310,7 @@
     flex: 0 0 50%;
     text-align: center;
 
-    @include d(992) {
+    @include d(1024) {
       padding: 10px;
     }
 
@@ -1071,7 +1332,7 @@
       width: 210px;
       height: 210px;
 
-      @include d(992) {
+      @include d(1024) {
         width: 180px;
         height: 180px;
       }
@@ -1080,7 +1341,7 @@
         width: 95px;
         height: 95px;
 
-        @include d(992) {
+        @include d(1024) {
           width: 80px;
           height: 80px;
         }
@@ -1091,13 +1352,13 @@
       width: 50px;
       height: 50px;
 
-      @include d(992) {
+      @include d(1024) {
         width: 35px;
         height: 35px;
       }
     }
 
-    @include d(992) {
+    @include d(1024) {
       flex: 0 0 50%;
       margin-bottom: 40px;
       text-align: center;
@@ -1110,6 +1371,27 @@
 
   &__img {
     margin: 0 auto 20px auto;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 190px;
+      height: 190px;
+      position: absolute;
+      background-color: $primary;
+      opacity: .3;
+      filter: blur(50px);
+      border-radius: 50%;
+      top: -20px;
+      left: 20px;
+      z-index: -1;
+
+      @include d(1024) {
+        top: -40px;
+        left: 35%;
+        opacity: .2;
+      }
+    }
   }
 
   &__step {
@@ -1180,14 +1462,14 @@
     margin-right: 28px;
 
     @include d(575) {
-      margin-right: 0;
+      margin-right: 20px;
       margin-bottom: 20px;
     }
   }
 }
 
 .btn_icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 

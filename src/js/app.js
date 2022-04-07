@@ -68,12 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const mixContent = document.querySelector(".js-mix");
   const btnStandart = document.querySelector("#btnStandartMix");
+  const btnClean = document.querySelector("#btnCleanMix");
+  const btnStandartHero = document.querySelector("#btnStandartMixHero");
+  const btnCleanHero = document.querySelector("#btnCleanMixHero");
   const modals = document.querySelectorAll(".modal");
   const formTemplate = document.querySelector(".form-content");
-  const btnPlus = document.querySelector(".js-plus");
+  const btnStatus = document.querySelector(".btn_status");
 
-  const btnClean = document.querySelector("#btnCleanMix");
-  const formBtn = document.querySelector(".form-modal-1 .btn")
+
+  btnStatus.addEventListener("click", e => {
+    e.preventDefault();
+    btnStatus.classList.add("cheking");
+    setTimeout(() => {
+      btnStatus.classList.remove("cheking");
+    }, 3000);
+  });
 
 
   formTemplate.addEventListener("click", (event) => {
@@ -96,7 +105,20 @@ document.addEventListener("DOMContentLoaded", () => {
     mixContent.classList.add("hidden");
     let btnHref = btnStandart.getAttribute("href");
     for (let i = 0; i <= modals.length; i++) {
-      console.log(modals[i].getAttribute("id"));
+      // console.log(modals[i].getAttribute("id"));
+      if (btnHref === modals[i].getAttribute("id")) {
+        modals[i].classList.add("active");
+        break
+      }
+    }
+  });
+
+  btnStandartHero.addEventListener("click", e => {
+    // e.preventDefault();
+    mixContent.classList.add("hidden");
+    let btnHref = btnStandartHero.getAttribute("data-href");
+    for (let i = 0; i <= modals.length; i++) {
+      // console.log(modals[i].getAttribute("id"));
       if (btnHref === modals[i].getAttribute("id")) {
         modals[i].classList.add("active");
         break
@@ -109,7 +131,20 @@ document.addEventListener("DOMContentLoaded", () => {
     mixContent.classList.add("hidden");
     let btnHref = btnClean.getAttribute("href");
     for (let i = 0; i <= modals.length; i++) {
-      console.log(modals[i].getAttribute("id"));
+      // console.log(modals[i].getAttribute("id"));
+      if (btnHref === modals[i].getAttribute("id")) {
+        modals[i].classList.add("active");
+        break
+      }
+    }
+  });
+
+  btnCleanHero.addEventListener("click", e => {
+    // e.preventDefault();
+    mixContent.classList.add("hidden");
+    let btnHref = btnCleanHero.getAttribute("data-href");
+    for (let i = 0; i <= modals.length; i++) {
+      // console.log(modals[i].getAttribute("id"));
       if (btnHref === modals[i].getAttribute("id")) {
         modals[i].classList.add("active");
         break
@@ -134,63 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  document.querySelectorAll('.js-btn-modal').forEach(btn => {
-    btn.addEventListener('click', e => {
-      //handle click
-      e.preventDefault();
-      // modals.classList.remove("active");
-      modals.forEach(modal => {
-        modal.classList.remove("active")
-      });
-      let btnHref = btn.getAttribute("href");
-      for (let i = 0; i <= modals.length; i++) {
-        console.log(modals[i].getAttribute("id"));
-        if (btnHref === modals[i].getAttribute("id")) {
-          modals[i].classList.add("active");
-          break
-        }
-      }
-    })
-  })
-  // btnModal.addEventListener("click", e => {
-
-  // });
-
-
-  // jQuery for scrolling
-  // const sectionArray = [1, 2, 3, 4, 5, 6, 7, 8];
-
-  // $.each(sectionArray, function (index, value) {
-
-  //   $(document).scroll(function () {
-  //     const offsetSection = $('#' + 'section_' + value).offset().top;
-  //     const docScroll = $(document).scrollTop();
-  //     const docScroll1 = docScroll + 1;
-
-
-  //     if (docScroll1 >= offsetSection) {
-  //       $('.nav-list li a').removeClass('active');
-  //       $('.nav-list li a').addClass('inactive');
-  //       $('.nav-list li a').eq(index).addClass('active');
-  //       $('.nav-list li a').eq(index).removeClass('inactive');
-  //     }
-  //   });
-
-  //   $('.nav li a').eq(index).click(function (e) {
-  //     const offsetClick = $('#' + 'section_' + value).offset().top;
-  //     e.preventDefault();
-  //     $('html, body').animate({
-  //       'scrollTop': offsetClick
-  //     }, 1000)
-  //   });
-  // });
-
-  // $(document).ready(function () {
-  //   $('.nav-list li a:link').addClass('inactive');
-  //   $('.nav-list li a').eq(0).addClass('active');
-  //   $('.nav-list li a:link').eq(0).removeClass('inactive');
-  // });
-
   $('.scroll-btn[href^="#"], .nav-list__link[href^="#"]').on('click', function (e) {
     e.preventDefault();
     closeMenu();
@@ -199,63 +177,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   });
 
-  // $('.close').click(function () {
-  //   parent.$.fancybox.close();
-  // });
 
-  // const showOnScroll = () => {
-  //   $('.section').each(function () {
-  //     let sectionPos = $(this).offset().top;
-  //     let windowPos = $(window).scrollTop() + $(window).height() / 3;
+  // function newsSlider() {
+  //   $('.news-slider')
 
-  //     if (sectionPos < windowPos) {
-  //       $(this).addClass('show');
-  //     }
-  //   });
+
+
   // }
-  // $(window).scroll(function () {
-  // showOnScroll();
-  // });
-
-  // $("")
-
-  function newsSlider() {
-    $('.news-slider').slick({
-      dots: true,
-      infinite: false,
-      speed: 400,
-      slidesToShow: 1.82,
-      slidesToScroll: 1,
-      arrows: false,
-      cssEase: ' cubic-bezier(.6, 0, .41, 1)',
-      responsive: [{
-          breakpoint: 993,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 601,
-          settings: {
-            slidesToShow: 1
-          }
+  const slider = $(".news-slider");
+  slider.slick({
+    dots: true,
+    infinite: false,
+    speed: 400,
+    slidesToShow: 2.5,
+    slidesToScroll: 1,
+    arrows: false,
+    cssEase: ' cubic-bezier(.6, 0, .41, 1)',
+    responsive: [{
+        breakpoint: 1281,
+        settings: {
+          slidesToShow: 1.3
         }
-      ]
-    });
-  }
-  newsSlider();
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 601,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
 
+  slider.on('wheel', (function (e) {
+    e.preventDefault();
+
+    if (e.originalEvent.deltaY < 0) {
+      $(this).slick('slickNext');
+    } else {
+      $(this).slick('slickPrev');
+    }
+  }));
 
 
   // monitor graphic functionality 
 
   const labels = [
+    '0',
     '1',
     '2',
     '3',
@@ -271,16 +244,28 @@ document.addEventListener("DOMContentLoaded", () => {
     '13',
     '14',
     '15',
+    '16',
+    '17',
+    '18',
+    '19',
+    '20',
+    '21',
+    '22',
+    '23',
+    '24',
+    '25',
+    '26',
+    '27',
+    '28',
+    '29',
+    '30',
   ];
 
   const data = {
     labels: labels,
     datasets: [{
-      label: '',
-      backgroundColor: 'rgba(5,94,255, .2)',
-      borderColor: '#055EFF',
       fill: true,
-      data: [30, 10, 5, 2, 20, 30, 45, 10, 20, 30, 0, 11, 28, 42, 100],
+      data: [0, 28, 27, 24, 26, 27, 30, 32, 31, 32, 30, 28, 33, 30, 32, 29, 32, 34, 30, 29, 36, 31, 34, 35, 32, 30, 28, 33, 30, 32, 29],
     }]
   };
 
@@ -288,14 +273,87 @@ document.addEventListener("DOMContentLoaded", () => {
     type: 'line',
     data: data,
     options: {
+      maintainAspectRatio: false,
+      elements: {
+        line: {
+          borderWidth: 2,
+          borderColor: "#055EFF",
+          backgroundColor: "rgba(5,94,255, .2)",
+        },
+        point: {
+          radius: 10,
+          borderWidth: 6,
+          borderColor: "rgba(0,0,0,0)",
+          backgroundColor: "rgba(0,0,0,0)",
+          hoverRadius: 10,
+          hoverBorderWidth: 6,
+          hoverBackgroundColor: "#ffffff",
+          hoverBorderColor: "#055EFF",
+        },
+      },
       plugins: {
         legend: {
           display: false
         },
+        tooltip: {
+          position: 'nearest',
+          enabled: true,
+          backgroundColor: "#323334",
+          padding: 16,
+          cornerRadius: 3,
+          borderWidth: 1,
+          borderColor: "#055EFF",
+          boxWidth: 0,
+          boxHeight: 0,
+          titleColor: "#999A9A",
+          caretSize: 5,
+          titleFont: {
+            size: 12,
+            weight: "normal",
+          },
+          bodyFont: {
+            size: 20,
+            weight: "bold",
+            family: "Circular Std",
+          },
+
+          callbacks: {
+            title: function () {
+              return "Total portfolio:";
+            },
+            label: function (context) {
+              let label = context.dataset.label || '';
+
+              if (label) {
+                label += ': ';
+              }
+              if (context.parsed.y !== null) {
+                label += new Intl.NumberFormat('en-US ', {
+                  style: ' currency',
+                  currency: ' USD'
+                }).format(context.parsed.y);
+              }
+              return label;
+            }
+          }
+        },
       },
+      // plugins: [showTooltip],
       labels: {
         display: false,
       },
+      scales: {
+        y: {
+          ticks: {
+            display: false,
+          }
+        },
+        x: {
+          ticks: {
+            display: false,
+          }
+        }
+      }
     }
   };
 

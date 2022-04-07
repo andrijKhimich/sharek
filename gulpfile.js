@@ -91,7 +91,7 @@ gulp.task("js", function () {
 
       // "src/libs/bootstrap-4.6.0/dist/js/bootstrap.min.js",
       // "src/js/graph.js",
-      "src/js/script.js",
+      // "src/js/script.js",
     ])
     .pipe(sourcemaps.init())
     .pipe(babel())

@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  @include d(991) {
+  @include d(1024) {
     justify-content: center;
   }
   li {

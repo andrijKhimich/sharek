@@ -8,14 +8,14 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 30px;
 
-    @include d(768) {
+    @include d(992) {
       display: block;
     }
 
     .nav {
       padding-right: 33px;
 
-      @include d(992) {
+      @include d(1024) {
         display: none;
       }
     }
@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    @include d(768) {
+    @include d(992) {
       justify-content: center;
       margin: 40px 0 0 0;
     }

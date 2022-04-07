@@ -63,7 +63,7 @@ h1 {
   line-height: 1.06em;
   margin-bottom: 45px;
 
-  @include d(992) {
+  @include d(1024) {
     font-size: 60px;
   }
 
@@ -76,7 +76,7 @@ h2 {
   font-size: 60px;
   line-height: 1em;
 
-  @include d(992) {
+  @include d(1024) {
     font-size: 50px;
   }
 
@@ -464,15 +464,11 @@ input {
 }
 
 .container {
-  max-width: 1268px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 15px;
   position: relative;
   z-index: 1;
-
-  @include d(1280) {
-    max-width: 1140px;
-  }
 
   @include d(1024) {
     max-width: 100%;
@@ -537,7 +533,7 @@ main {
     font-size: 16px;
   }
 
-  @include d(992) {
+  @include d(1024) {
     padding: 10px 20px;
   }
 
@@ -547,7 +543,7 @@ main {
   }
 
   &_gray {
-    color: $gray;
+    color: #8593A3;
     border: 1px solid rgba(133, 147, 163, 0.32);
 
     &:hover {
@@ -586,7 +582,7 @@ main {
   bottom: 50px;
   right: 30px;
 
-  @include d(992) {
+  @include d(1024) {
     display: none;
   }
 }
@@ -621,3 +617,21 @@ main {
   }
 }
 
+.plus-icon {
+  width: 23px;
+  height: 23px;
+  fill: $primary;
+  position: absolute;
+  top: 45px;
+  right: 60px;
+  transform: rotate(0deg);
+  transition: all $hover-duration $timing;
+  @include d(1024) {
+    right: 20px;
+  }
+  @include d(992) {
+    width: 15px;
+    height: 15px;
+    top: 30px;
+  }
+}
